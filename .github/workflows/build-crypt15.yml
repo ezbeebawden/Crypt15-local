@@ -30,17 +30,16 @@ jobs:
         run: |
           sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
-      - name: Extract app source
+      - name: Unpack app project
         run: |
           mkdir -p crypt15-project
-          unzip -q Crypt15-Local-Test-0.1.0-Source.zip -d crypt15-project
+          unzip -q 'Crypt15-Local-Test-0.1.2-Database-Analysis-Source.zip' -d crypt15-project
 
-      - name: Build APK
+      - name: Compile debug APK
         working-directory: crypt15-project
         run: gradle :app:assembleDebug --no-daemon
 
       - name: Upload APK
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: Crypt15-Local-Test-debug-APK
