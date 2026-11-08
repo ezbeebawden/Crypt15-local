@@ -33,7 +33,7 @@ jobs:
       - name: Unpack app project
         run: |
           mkdir -p crypt15-project
-          unzip -q 'Crypt15-Local-Test-0.1.3-Conversation-Match-Tester-Source.zip' -d crypt15-project
+          unzip -q 'Crypt15-Local-Test-0.1.4-Conversation-Browser-Source.zip' -d crypt15-project
 
       - name: Compile debug APK
         working-directory: crypt15-project
